@@ -27,7 +27,7 @@ def show_message(title, message):
     root.withdraw()  
     messagebox.showerror(title, message) 
 
-image_path = "C:\Users\WDAGUtilityAccount\Downloads\FAKE-VIRUS-main (2).zip\FAKE-VIRUS-main/" 
+image_path = "C:\Users\WDAGUtilityAccount\Downloads\FAKE-VIRUS-main (3).zip\FAKE-VIRUS-main/" 
 
 change_wallpaper(image_path)
 shutdown_pc()
